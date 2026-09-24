@@ -1,0 +1,127 @@
+.insights {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 56px 32px 100px;
+}
+
+.insights__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin: 0 0 10px;
+}
+
+.insights__head h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 34px;
+  margin: 0 0 14px;
+  color: var(--bone);
+}
+
+.insights__note {
+  font-size: 14px;
+  color: var(--bone-dim);
+  line-height: 1.6;
+  max-width: 58ch;
+}
+
+.insights__note code {
+  font-family: var(--font-mono);
+  background: var(--slate);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 12.5px;
+}
+
+.insights__summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 40px 0 56px;
+}
+
+.insights__summary-item {
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  padding: 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.insights__summary-value {
+  font-family: var(--font-mono);
+  font-size: 22px;
+  color: var(--amber);
+}
+
+.insights__summary-label {
+  font-size: 12.5px;
+  color: var(--bone-dim);
+}
+
+.insights__chart {
+  margin-bottom: 48px;
+}
+
+.insights__chart h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 19px;
+  color: var(--bone);
+  margin: 0 0 20px;
+}
+
+/* ------------------------------------------------------------- barchart */
+
+.barchart {
+  width: 100%;
+}
+
+.barchart__bars {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  gap: 10px;
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 0;
+}
+
+.barchart__col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.barchart__value {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--bone-dim);
+  margin-bottom: 6px;
+}
+
+.barchart__bar {
+  width: 100%;
+  max-width: 46px;
+  background: linear-gradient(180deg, var(--amber) 0%, var(--rust) 100%);
+  border-radius: 3px 3px 0 0;
+  min-height: 2px;
+}
+
+.barchart__label {
+  font-size: 12px;
+  color: var(--bone-dim);
+  margin-top: 8px;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .insights__summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

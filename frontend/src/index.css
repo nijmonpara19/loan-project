@@ -1,0 +1,140 @@
+:root {
+  --ink: #0d0f1e;
+  --ink-deep: #07080f;
+  --slate: #191c33;
+  --slate-soft: #262a4d80;
+  --hairline: #33385f;
+  --bone: #eceefa;
+  --bone-dim: #eceefaa3;
+  --amber: #7c6cff;
+  --teal: #34d8b9;
+  --rust: #ff5c72;
+
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--ink);
+  color: var(--bone);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button {
+  font-family: inherit;
+}
+
+input,
+select {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ------------------------------------------------------- page transitions */
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home,
+.predict,
+.dashboard,
+.insights,
+.about {
+  animation: page-enter 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ------------------------------------------------------------ card reveal */
+
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.home__step,
+.dashboard__stat,
+.insights__summary-item,
+.insights__chart,
+.result {
+  animation: card-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.home__step:nth-child(1),
+.dashboard__stat:nth-child(1),
+.insights__summary-item:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.home__step:nth-child(2),
+.dashboard__stat:nth-child(2),
+.insights__summary-item:nth-child(2) {
+  animation-delay: 0.12s;
+}
+.home__step:nth-child(3),
+.dashboard__stat:nth-child(3),
+.insights__summary-item:nth-child(3) {
+  animation-delay: 0.19s;
+}
+.insights__summary-item:nth-child(4) {
+  animation-delay: 0.26s;
+}
+.insights__chart:nth-child(2) {
+  animation-delay: 0.08s;
+}
+.insights__chart:nth-child(3) {
+  animation-delay: 0.16s;
+}
+.insights__chart:nth-child(4) {
+  animation-delay: 0.24s;
+}
+.insights__chart:nth-child(5) {
+  animation-delay: 0.32s;
+}
+
+.dashboard__table tbody tr {
+  animation: card-in 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.dashboard__table tbody tr:nth-child(n) {
+  animation-delay: calc(0.04s * var(--row-index, 0));
+}
